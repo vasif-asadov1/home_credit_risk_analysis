@@ -14,7 +14,7 @@
 
 ---
 
-The full detailed analysis and SQL & Python codes are available in my portfolio website: [DataDocs | Data Science Hub](https://vasif-asadov1.github.io/Projects/home_credit_risk/00_problem_description/)
+The full detailed analysis and SQL & Python codes are available in my portfolio website: [DataDocs | Data Science Hub](https://vasif-asadov1.github.io/Projects/home_credit/00_problem_description/)
 
 The dataset source: https://www.kaggle.com/competitions/home-credit-default-risk/data
 
