@@ -1,9 +1,77 @@
+<div align="center">
 
-# Home Credit Default Risk Prediction 
+# 🏦 Home Credit Default Risk Prediction
+
+<p>
+  <img src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black" alt="DuckDB"/>
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Machine%20Learning-FF6F00?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="Machine Learning"/>
+  <img src="https://img.shields.io/badge/Prediction-8A2BE2?style=for-the-badge" alt="Prediction"/>
+</p>
+
+</div>
+
+---
+
+The full detailed analysis and SQL & Python codes are available in my portfolio website: [DataDocs | Data Science Hub](https://vasif-asadov1.github.io/Projects/home_credit_risk/00_problem_description/)
+
+The dataset source: https://www.kaggle.com/competitions/home-credit-default-risk/data
+
+# Project Overview
+
+This project consists of three main parts:
+
+1. **Exploratory Data Analysis (EDA)**: In this part, I performed a detailed analysis of the dataset to understand the relationships between different features and the target variable (default risk). I used DuckDB SQL for querying the data and Plotly for visualizations. The EDA is divided into several tasks, each addressing specific business questions related to default risk. 
+2. **Feature Engineering**: Based on the insights gained from the EDA, I created new features that could potentially improve the predictive power of the model. This includes aggregating information from different tables and creating new variables that capture important aspects of the applicants' financial behavior.
+3. **Modeling**: In this part, I built and evaluated several machine learning models to predict default risk. I used the features created in the previous step and applied various algorithms to find the best performing model. The models were evaluated using appropriate metrics to ensure their effectiveness in predicting default risk. 
+
+Note: Website contains SQL queries, Python codes and tabular results. It is intended to be viewed by technical audience. For non-technical audience, I have provided the summary of the whole project in this README section. As the project is very large, the Readme is too long. Please, use the table of contents below to navigate to the section you are interested in.
+
+## Table of Contents
+
+- [🏦 Home Credit Default Risk Prediction](#-home-credit-default-risk-prediction)
+- [Project Overview](#project-overview)
+  - [Table of Contents](#table-of-contents)
+- [Dataset Description](#dataset-description)
+- [Applications Table - EDA](#applications-table---eda)
+  - [Task 1. The "Family Burden" Matrix](#task-1-the-family-burden-matrix)
+  - [Task 2.  The impact of Education on default risk](#task-2--the-impact-of-education-on-default-risk)
+  - [Task 3. Age \& Occupation: The Risky Intersection](#task-3-age--occupation-the-risky-intersection)
+  - [Task 4. Asset Ownership \& Default Risk](#task-4-asset-ownership--default-risk)
+  - [Task 5. The External Score Validation](#task-5-the-external-score-validation)
+  - [Task 6. The Impact of Housing Quality on Default Risk](#task-6-the-impact-of-housing-quality-on-default-risk)
+  - [Task 7.  The Bad Influence of Social Circle on Default Risk](#task-7--the-bad-influence-of-social-circle-on-default-risk)
+- [Previous Applications Table - EDA](#previous-applications-table---eda)
+  - [Task 8. Impact of Past Refusals on Default Risk](#task-8-impact-of-past-refusals-on-default-risk)
+  - [Task 9: The ”Trust Gap” (Asked vs. Given)](#task-9-the-trust-gap-asked-vs-given)
+  - [Task 10. The Pricing History and High Interest Risk Tag](#task-10-the-pricing-history-and-high-interest-risk-tag)
+  - [Task 11. The Lifestyle Risk Matrix](#task-11-the-lifestyle-risk-matrix)
+  - [Task 12. The Insurance Signal: Responsibility vs. Risk Aversion](#task-12-the-insurance-signal-responsibility-vs-risk-aversion)
+- [Payment Analysis - EDA](#payment-analysis---eda)
+  - [Tables required for Payment Analysis](#tables-required-for-payment-analysis)
+  - [Task 13. The ”Chronic Late Payer” vs. ”Deteriorating Payer”](#task-13-the-chronic-late-payer-vs-deteriorating-payer)
+  - [Task 14. The ”Partial Payment” Risk Signal](#task-14-the-partial-payment-risk-signal)
+  - [Task 15. The ”Early Payer” Risk Signal](#task-15-the-early-payer-risk-signal)
+- [External Reputation Analysis - EDA](#external-reputation-analysis---eda)
+  - [Task 16.](#task-16)
+  - [Task 17.](#task-17)
+  - [Task 18.](#task-18)
+  - [Task 19.](#task-19)
+  - [Task 20.](#task-20)
+- [Feature Engineering](#feature-engineering)
+  - [Applications Table Features](#applications-table-features)
+  - [Previous Applications Table Features](#previous-applications-table-features)
+  - [Payment Analysis Table Features](#payment-analysis-table-features)
+- [Machine Learning Modelling](#machine-learning-modelling)
+
+> **A note on scope.** This README documents a large, multi-table pipeline spanning EDA, feature engineering, and modeling across seven interconnected datasets. Given the volume of business questions explored, each section here is intentionally kept concise; the full step-by-step methodology, SQL queries, and code are preserved on the companion portfolio site linked above for readers who wish to go deeper. Thank you for taking the time to explore this project.
+
+# Dataset Description
 
 The dataset used in this project is the Home Credit Default Risk dataset, which contains information about loan applicants and their credit history. The goal of this project is to predict whether a loan applicant will default on their loan based on their application data. The dataset is multi-table and some tables have more than 10 million rows, which makes it challenging to read the data into memory. To overcome this challenge, I used DuckDB, a high-performance analytical database management system that allows for efficient querying of large datasets without the need to load the entire dataset into memory.
 
-The dataset link: https://www.kaggle.com/competitions/home-credit-default-risk/data
+
 
 The tables inside the dataset has following structure:
 
@@ -265,17 +333,27 @@ The real insight here is about the "Just in Time" payers. These clients, who pay
 
 
 
+# External Reputation Analysis - EDA 
 
 
+## Task 16. 
+
+## Task 17. 
+
+## Task 18. 
+
+## Task 19. 
+
+## Task 20. 
 
 
+# Feature Engineering
+
+## Applications Table Features
+
+## Previous Applications Table Features
+
+## Payment Analysis Table Features
 
 
-
-
-
-
-
-
-
-
+# Machine Learning Modelling
