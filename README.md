@@ -1,5 +1,5 @@
 
-# Home Credit Default Risk Prediction - EDA with SQL
+# Home Credit Default Risk Prediction 
 
 The dataset used in this project is the Home Credit Default Risk dataset, which contains information about loan applicants and their credit history. The goal of this project is to predict whether a loan applicant will default on their loan based on their application data. The dataset is multi-table and some tables have more than 10 million rows, which makes it challenging to read the data into memory. To overcome this challenge, I used DuckDB, a high-performance analytical database management system that allows for efficient querying of large datasets without the need to load the entire dataset into memory.
 
@@ -30,7 +30,7 @@ I did Exploratory Data Analysis on each of the tables using DuckDB SQL and Plotl
 
 **Business Question: Does the interaction between marital status (Single vs. Married) and number of dependent children materially alter default risk? Is a single parent riskier than a married parent with the same number of children?**
 
-![](../assets/01_task1.png)
+![](./assets/01_task1.png)
 
 
 Default risk consistently scales with the number of dependents, peaking sharply for applicants with 3+ children. "Civil marriage" and "Single" applicants represent our highest-risk segments. They begin at a 9.6% default rate with zero children and surge to 15.8% and 15.3% respectively at the 3+ dependents mark. This combination of unmarried status and high dependents requires stricter credit scoring thresholds in our model.
@@ -43,7 +43,7 @@ In contrast, "Married" and "Widow" statuses indicate strong financial stability.
 
 **Business Question: Do higher-educated clients handle high debt burdens better than lower-educated clients?**
 
-![](../assets/01_task2.png)
+![](./assets/01_task2.png)
 
 The "image_9e5f5e.png" heatmap clearly supports our literacy hypothesis: formal education acts as a massive buffer against default risk. Applicants with an "Academic degree" present exceptional stability, peaking at just 2.7% for a 10-20% Debt-to-Income (DTI) ratio and dropping to an impressive 0.0% beyond a 20% DTI. Similarly, the "Higher education" group manages debt efficiently, keeping risk contained within a tight 4.9% to 6.2% range across all DTI brackets. These segments are highly resilient.
 
@@ -54,7 +54,7 @@ Conversely, default risk escalates sharply for lower education tiers, especially
 
 **Business Question: How does age and occupation interact to influence default risk? Are younger applicants in certain occupations more prone to default than older applicants in the same field?**
 
-![](../assets/01_task3.png)
+![](./assets/01_task3.png)
 
 Based on the visualization, default risk is sharply concentrated in younger demographics and manual labor roles. "Low-skill Laborers" carry the highest default probability, approaching the 20% mark for applicants under 35. Similarly, young applicants (<35) in "Security", "Cooking", and "Driver" roles display elevated risks between 10-15%. Conversely, a clear inverse relationship exists between age and risk: default probability steadily declines as age increases, with the 55+ cohort showing highly favorable risk profiles (0-5%) across almost all occupations.
 
@@ -65,7 +65,7 @@ Standard "Laborers" generate our largest applicant volume (peaking between ages 
 
 **Business Question: How does asset ownership (car, real estate) influence default risk? Are applicants with assets less likely to default than those without?**
 
-![](../assets/01_task4.png)
+![](./assets/01_task4.png)
 
 Asset ownership reveals a clear inverse relationship with default risk across our portfolio. Applicants lacking both a car and real estate represent our highest risk segment, demonstrating an 8.99% default probability across roughly 60,000 total loans. Interestingly, while our largest customer base consists of those who own real estate but not a car (peaking at approximately 140,000 loans), this group still carries a moderately high default risk of 8.28%.
 
@@ -76,7 +76,7 @@ Conversely, vehicle ownership emerges as the strongest indicator of financial re
 
 **Business Question: Is the external credit score (EXT SOURCE 2) equally predictive for small ”Consumer Loans” vs. large ”Cash Loans”?**
 
-![](../assets/01_task5.png)
+![](./assets/01_task5.png)
 
 External credit scores are highly predictive of default, with risk rates plummeting as scores improve. In the lowest band (0.0 - 0.2), defaults are critically high, reaching 29.0% for Cash Loans and 19.7% for Revolving Loans. This risk decays rapidly; advancing to the middle tier (0.4 - 0.6) slashes rates down to 6.9% and 4.5%, respectively. For top-tier applicants (0.8 - 1.0), risk is practically negligible, bottoming out at 2.0% for Cash Loans and an impressive 0.0% for Revolving Loans.
 
@@ -88,7 +88,7 @@ Contract type also consistently dictates risk exposure. Across every single scor
 **Business Question: Does living in a ”High-Quality” building significantly reduce default risk, and is the ”Absence of Data” (Missing Housing Info) a risk factor in itself?**
 
 
-![](../assets/01_task6.png)
+![](./assets/01_task6.png)
 
 Applicants omitting housing documentation represent our largest loan volume and our highest risk segment. This "Missing" group averages the lowest income at roughly $168,000 and carries a sharply elevated default rate of 8.2%. The failure or refusal by users to provide these documents should not be viewed as a mere administrative blank; rather, it acts as a highly significant behavioral indicator of financial instability and default likelihood.
 
@@ -100,7 +100,7 @@ In stark contrast, when applicants actually submit housing details, default risk
 
 **Business Question: What is the tipping point where a client’s social circle becomes ”Toxic”? (i.e., If ¿10% of your network defaults, do you follow them?)**
 
-![](../assets/01_task7.png)
+![](./assets/01_task7.png)
 
 
 Social circle toxicity acts as a highly effective, early-warning red flag for default probability. The vast majority of our portfolio falls into the "no social data" (over 160,000 loans) and "clean circle" (roughly 115,000 loans) segments. Fortunately, both of these high-exposure groups demonstrate strong stability, maintaining low default risk rates of approximately 7.9% and 7.7%. This confirms that an absence of negative social signals—or having a verified clean network—generally aligns with a safe applicant profile.
@@ -118,7 +118,7 @@ However, when social toxicity is detected, default risk escalates dramatically. 
 **Business Question:  Does a past refusal predict future default, and does the ”Recency” of that refusal matter? (Is a fresh rejection more dangerous than an old one?)**
 
 
-![](../assets/01_task8.png)
+![](./assets/01_task8.png)
 
 Past credit rejections exhibit a clear "cooling-off" period where default risk decays significantly as time passes. Applicants with a recent refusal within the last 6 months present our highest risk at 12.5%. This elevated risk persists over the short term, remaining critically high at 11.6% for those rejected between 6 and 12 months ago, and 10.8% for the 1-to-2-year cohort.
 
@@ -135,7 +135,7 @@ From a policy perspective, our automated underwriting should apply strict penalt
 **Business Question: Are clients who were previously ”Downgraded” (received less money than they requested) significantly higher risk today compared to those who were ”Upsold”?**
 
 
-![](../assets/01_task9.png)
+![](./assets/01_task9.png)
 
 The distribution of applicants across our internal trust categories reveals a critical and highly counter-intuitive trend. Our largest segment by a massive margin—accounting for over 180,000 applications—falls into the "upsold (trusted)" category. However, this group paradoxically carries the highest default probability in the portfolio at 8.6%. The "exact match" segment follows closely with an elevated risk of 8.4%. This strongly indicates that the underlying metrics currently used to designate a customer as "trusted" or suitable for upselling are structurally flawed and are actively capturing high-risk profiles.
 
@@ -152,7 +152,7 @@ This visual serves as a major red flag for our internal scoring mechanisms. We u
 
 **Business Question: Do clients who historically accepted ”High Interest” loans continue to be high-risk today, or have they ”graduated” to safer behavior?**
 
-![](../assets/01_task10.png)
+![](./assets/01_task10.png)
 
 Our portfolio volume is disproportionately concentrated in the "historical high yield" segment, encompassing nearly 160,000 total loans. While this tier drives the vast majority of our business, it also exposes us to the peak default probability at 8.9%. This clear alignment between high historical yield and elevated default risk indicates that our past pricing strategies successfully captured massive volume, but primarily by aggregating riskier applicant profiles.
 
@@ -168,7 +168,7 @@ in stability).
 
 **Business Question: Does the specific ”Category of Goods” purchased in the past predict current creditworthiness?**
 
-![](../assets/01_task11.png)
+![](./assets/01_task11.png)
 
 
 The data demonstrates a wide variance in risk probability based on the type of goods financed. Categories associated with rapid depreciation, high liquidity, or short lifespans exhibit the highest risk profiles: Vehicles top the list at 11.2, followed closely by Auto Accessories (9.8) and Mobile phones (9.2). The "Mobile" category is particularly critical for risk management as it combines a very high risk probability with the largest volume in the high-risk bracket (total_count: 81,547). Conversely, categories linked to domestic stability or long-term utility show drastically lower default rates. Furniture (5.8), Clothing and Accessories (5.6), and Medical Supplies (5.6) represent the safest borrower segments. This suggests that clients investing in home environments or essential well-being are statistically more reliable than those financing transient or luxury electronic goods.
@@ -187,7 +187,7 @@ Key Observations for the Report:
 **Business Question: Does the specific ”Category of Goods” purchased in the past predict current creditworthiness?**
 
 
-![](../assets/01_task12.png)
+![](./assets/01_task12.png)
 
 The data contradicts the hypothesis that insurance purchase signals financial caution or literacy. The "always insured (highly cautious)" segment presents the highest risk probability at 9.3. This is significantly higher than the "never insured" cohort, which sits at 8.5. This trend suggests a strong "Adverse Selection" effect: clients who feel the need to insure their loans may be privately aware of their own financial instability or higher likelihood of default. Interestingly, the safest segment is "no insurance history" at 6.1, followed by "sometimes insured" at 7.7, indicating that a lack of engagement with insurance products is actually a positive signal for creditworthiness in this specific context.
 
@@ -215,7 +215,7 @@ The tables used in this query are the followings:
 
 **Business Question: Does a recent increase in payment delay (e.g., last 3 months vs. last 12 months) predict default more accurately than the overall average delay?**
 
-![](../assets/01_task13.png)
+![](./assets/01_task13.png)
 
 
 
@@ -234,7 +234,7 @@ For the rest of the population, the trend is positive. Clients with "Improving B
 **Business Question: Are clients who frequently pay less than the required installment amount (even by a small margin) significantly riskier?**
 
 
-![](../assets/01_task14.png)
+![](./assets/01_task14.png)
 
 
 We investigated whether paying less than the full installment amount is an early warning sign of default. The data confirms that any level of underpayment significantly increases risk compared to clients who pay in full.
@@ -253,7 +253,7 @@ The vast majority of the portfolio (289,168 clients) falls into the "Perfect Pay
 
 **Business Question: Is there a U-shaped risk curve where paying too early or too late are both risky, while paying ”on time” is the safest behavior?**
 
-![](../assets/01_task15.png)
+![](./assets/01_task15.png)
 
 We tested the "U-shaped curve" hypothesis to see if paying too early acts as a risk signal (like potential churn or fraud). The data disproves this hypothesis. Instead of a U-shape, we see a fairly linear trend: the earlier a client pays, the safer they are.
 
